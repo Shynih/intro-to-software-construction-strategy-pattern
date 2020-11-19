@@ -1,5 +1,5 @@
-#ifndef _VECTORTEST_HPP__
-#define _VECTORTEST_HPP__
+#ifndef _LISTTEST_HPP__
+#define _LISTTEST_HPP__
 
 #include "gtest/gtest.h"
 
@@ -14,19 +14,19 @@
 #include "base.hpp"
 #include "container.hpp"
 
-TEST(VectorTest, AddTest){
+TEST(ListTest, AddTest){
 	Base* one = new Op(1);
-	VectorContainer* test = new VectorContainer();
+	ListContainer* test = new ListContainer();
 	test->add_element(one);
 	ASSERT_EQ(test->size(), 1);
 	EXPECT_EQ(test->at(0)->evaluate(), 1);
 }
 
-TEST(VectorTest, AddTestMultiple){
+TEST(ListTest, AddTestMultiple){
 	Base* one = new Op(1);
 	Base* two = new Op(2);
 	Base* three = new Op(3);
-	VectorContainer* test = new VectorContainer();
+	ListContainer* test = new ListContainer();
 	test->add_element(one);
 	test->add_element(two);
 	test->add_element(three);
@@ -36,21 +36,21 @@ TEST(VectorTest, AddTestMultiple){
 	EXPECT_EQ(test->at(2)->evaluate(), 3);
 }
 
-TEST(VectorTest, PrintTest){
+TEST(ListTest, PrintTest){
 	Base* one = new Op(1);
 	Base* two = new Op(2);
 	Add* testadd = new Add(one, two);
-	VectorContainer* test = new VectorContainer();
+	ListContainer* test = new ListContainer();
 	test->add_element(testadd);
 
 	ASSERT_EQ(test->size(), 1);
 	EXPECT_EQ(test->at(0) -> stringify(), "1.0 + 2.0");
 }
 
-TEST(VectorTest, SwapTest){
+TEST(ListTest, SwapTest){
 	Base* one = new Op(1);
 	Base* two = new Op(2);
-	VectorContainer* test = new VectorContainer();
+	ListContainer* test = new ListContainer();
 	test->add_element(one);
 	test->add_element(two);
 
@@ -60,20 +60,20 @@ TEST(VectorTest, SwapTest){
 	EXPECT_EQ(test->at(1)->evaluate(), 1);
 }
 
-TEST(VectorTest, AtTest){
+TEST(ListTest, AtTest){
 	Base* one = new Op(1);
-	VectorContainer* test = new VectorContainer();
+	ListContainer* test = new ListContainer();
 	test->add_element(one);
 
 	ASSERT_EQ(test->size(), 1);
 	EXPECT_EQ(test->at(0)->evaluate(), 1);
 }
 
-TEST(VectorTest, SizeTest){
+TEST(ListTest, SizeTest){
 	Base* one = new Op(1);
 	Base* two = new Op(2);
 	Base* three = new Op(3);
-	VectorContainer* test = new VectorContainer();
+	ListContainer* test = new ListContainer();
 	test->add_element(one);
 	test->add_element(two);
 	test->add_element(three);
@@ -82,12 +82,3 @@ TEST(VectorTest, SizeTest){
 }
 
 #endif
-
-
-
-
-
-
-
-
-
