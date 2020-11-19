@@ -2,6 +2,7 @@
 #define __VECTORCONTAINER_HPP__
 
 #include "container.hpp"
+#include "sort.hpp"
 #include <vector>
 using namespace std;
 
@@ -17,12 +18,11 @@ class VectorContainer : public Container{
 		VectorContainer(Sort* temp): sort_function(NULL){
 			sort_function = temp;
 		}
+		void set_sort_function(Sort* sort_function) {
+			this -> sort_function = sort_function;
+		}
 		void sort(){
 		      sort_function->sort(this);
-		}
-		void set_sort_function(Sort* sort_function){
-			this->sort_function = sort_function;
-		}
 		void add_element(Base* element){
 			baseVector.push_back(element);
 		}

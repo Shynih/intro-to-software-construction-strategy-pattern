@@ -8,8 +8,7 @@
 #include "div_test.hpp"
 #include "vector_test.hpp"
 #include "list_test.hpp"
-
-
+#include "sort_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

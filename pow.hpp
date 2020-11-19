@@ -11,7 +11,7 @@ class Pow : public Base {
         double result;
         std::string sentence;
     public:
-        Pow(Base* &val1, Base* &val2) : Base() {
+        Pow(Base* val1, Base* val2) : Base() {
 			if (val1->evaluate() == 0) {
 				result = 1.0;
 				sentence = "1.0";

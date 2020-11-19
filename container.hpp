@@ -19,7 +19,8 @@ class Container {
         Container() : sort_function(nullptr) { };
         Container(Sort* function) : sort_function(function) { };
 
-        
+
+        /* Non Virtual Functions */
         void set_sort_function(Sort* sort_function);
 
         
