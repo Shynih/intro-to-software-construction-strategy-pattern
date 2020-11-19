@@ -11,10 +11,10 @@ class Sort;
 class SelectionSort : public Sort {
     public:
         // Constructors 
-        SelectionSort();
+        SelectionSort() : Sort(){};
 
         // Pure Virtual Functions /
-        void sort(Container* container) {
+        virtual void sort(Container* container) {
           for (int i = 0; i < container -> size() - 1; i++) {
             int min = i;
             for (int j = i + 1; j < container -> size(); j++) {
