@@ -187,4 +187,35 @@ TEST(SortTestSetList, BubbleSortTest) {
     EXPECT_EQ(container->at(2)->evaluate(), 28);
 }
 
+TEST(SortTestSetVector, SortNotSet) {
+    Base* seven = new Op(7);
+    Base* four = new Op(4);
+    Mult* TreeA = new Mult(seven, four);
+
+    Base* three = new Op(3);
+    Base* two = new Op(2);
+    Add* TreeB = new Add(three, two);
+
+    Base* ten = new Op(10);
+    Base* six = new Op(6);
+    Sub* TreeC = new Sub(ten, six);
+
+    VectorContainer* container = new VectorContainer();
+    container->add_element(TreeA);
+    container->add_element(TreeB);
+    container->add_element(TreeC);
+
+    ASSERT_EQ(container->size(), 3);
+    EXPECT_EQ(container->at(0)->evaluate(), 28);
+    EXPECT_EQ(container->at(1)->evaluate(), 5);
+    EXPECT_EQ(container->at(2)->evaluate(), 4);
+
+    container->sort();
+
+    ASSERT_EQ(container->size(), 3);
+    EXPECT_EQ(container->at(0)->evaluate(), 28);
+    EXPECT_EQ(container->at(1)->evaluate(), 5);
+    EXPECT_EQ(container->at(2)->evaluate(), 4);
+}
+
 #endif
