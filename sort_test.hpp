@@ -29,13 +29,13 @@ TEST(VectorContainerTestSet, SwapTest) {
 
     // Assert that the container has at least a single element
     // otherwise we are likely to cause a segfault when accessing
-    ASSERT_EQ(test_container->size(), 1);
+    ASSERT_EQ(test_container->size(), 2);
     EXPECT_EQ(test_container->at(0)->evaluate(), 7);
 
     test_container -> swap(0, 1);
 
     EXPECT_EQ(test_container->at(0)->evaluate(), 8);
-    EXPECT_EQ(test_container->at(0)->evaluate(), 7);
+    EXPECT_EQ(test_container->at(1)->evaluate(), 7);
 }
 
 TEST(ListContainerTestSet, SwapTest) {
@@ -50,13 +50,13 @@ TEST(ListContainerTestSet, SwapTest) {
 
     // Assert that the container has at least a single element
     // otherwise we are likely to cause a segfault when accessing
-    ASSERT_EQ(test_container->size(), 1);
+    ASSERT_EQ(test_container->size(), 2);
     EXPECT_EQ(test_container->at(0)->evaluate(), 7);
 
     test_container -> swap(0, 1);
 
     EXPECT_EQ(test_container->at(0)->evaluate(), 8);
-    EXPECT_EQ(test_container->at(0)->evaluate(), 7);
+    EXPECT_EQ(test_container->at(1)->evaluate(), 7);
 }
 
 TEST(SortTestSetVector, SelectionSortTest) {
