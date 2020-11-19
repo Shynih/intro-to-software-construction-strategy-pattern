@@ -19,7 +19,12 @@ class VectorContainer : public Container{
 			sort_function = temp;
 		}
 		void set_sort_function(Sort* sort_function) {
-			this -> sort_function = sort_function;
+			if (sort_function != NULL) {
+				this -> sort_function = sort_function;
+			}
+			else {
+				throw "sort function is null";
+			}
 		}
 		void sort(){
 		      sort_function->sort(this);
