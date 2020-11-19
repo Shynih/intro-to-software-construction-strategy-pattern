@@ -23,7 +23,6 @@ class VectorContainer : public Container{
 		}
 		void sort(){
 		      sort_function->sort(this);
-		}
 		void add_element(Base* element){
 			baseVector.push_back(element);
 		}
