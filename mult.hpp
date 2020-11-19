@@ -11,7 +11,7 @@ class Mult : public Base {
         double result;
         std::string sentence;
     public:
-        Mult(Base* &val1, Base* &val2) : Base() {
+        Mult(Base* val1, Base* val2) : Base() {
             result = val1 ->evaluate() * val2->evaluate();
             std::stringstream stream;
             stream << val1 -> stringify() << " * " << val2 -> stringify();
