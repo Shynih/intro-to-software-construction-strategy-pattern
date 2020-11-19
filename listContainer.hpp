@@ -19,7 +19,12 @@ class ListContainer : public Container{
 			sort_function = temp;
 		} 
 		void sort(){
-			 sort_function->sort(this);
+			if (sort_function != NULL) {
+				sort_function->sort(this);
+			}
+			else {
+				throw "sort function is null";
+			}
 		}
 		void set_sort_function(Sort* sort_function) {
 			this -> sort_function = sort_function;
