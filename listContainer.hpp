@@ -21,6 +21,9 @@ class ListContainer : public Container{
 		void sort(){
 			 sort_function->sort(this);
 		}
+		void set_sort_function(Sort* sort_function) {
+			this -> sort_function = sort_function;
+		}
 		void add_element(Base* element){
 			baseList.push_back(element);
 		}
